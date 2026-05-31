@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivs Webpage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Cryptography Tool</h1> <!-- This is the header, it states it is a Cryptography Tool-->
+<section>
+    <h2>Encryption</h2> <!-- Second Header, states that it is used for Encryption-->
+    <div>
+        <label for="plaintext">Plaintext:</label> 
+        <input type="text" id="plaintext" name="plaintext">
+    </div>
+    <div>
+        <label for="key">Key:</label>
+        <input type="text" id="key" name="key">
+    </div>
+    <button onclick="encrypt()">Encrypt</button>
+    <p id="encryptionOutput"></p>
+</section>
+
+<section>
+    <h2>Decryption</h2>
+    <div>
+        <label for="ciphertext">Ciphertext:</label>
+        <input type="text" id="ciphertext" name="ciphertext">
+    </div>
+    <div>
+        <label for="decryptionKey">Key:</label>
+        <input type="text" id="decryptionKey" name="decryptionKey">
+    </div>
+    <button onclick="decrypt()">Decrypt</button>
+    <p id="decryptionOutput"></p>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
