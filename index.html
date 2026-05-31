@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shivs Webpage</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenere Cipher</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Cryptography Tool</h1> <!-- This is the header, it states it is a Cryptography Tool-->
-<section>
-    <h2>Encryption</h2> <!-- Second Header, states that it is used for Encryption-->
-    <div>
-        <label for="plaintext">Plaintext:</label> 
-        <input type="text" id="plaintext" name="plaintext">
-    </div>
-    <div>
-        <label for="key">Key:</label>
-        <input type="text" id="key" name="key">
-    </div>
-    <button onclick="encrypt()">Encrypt</button>
-    <p id="encryptionOutput"></p>
-</section>
+    <main class="app-shell">
+        <section class="cipher-card" aria-labelledby="app-title">
+            <div class="card-header">
+                <p class="eyebrow">Cryptography Tool</p>
+                <h1 id="app-title">Vigenere Cipher</h1>
+                <p class="subtitle">Encode and decode messages with a polished, focused cipher workspace.</p>
+            </div>
 
-<section>
-    <h2>Decryption</h2>
-    <div>
-        <label for="ciphertext">Ciphertext:</label>
-        <input type="text" id="ciphertext" name="ciphertext">
-    </div>
-    <div>
-        <label for="decryptionKey">Key:</label>
-        <input type="text" id="decryptionKey" name="decryptionKey">
-    </div>
-    <button onclick="decrypt()">Decrypt</button>
-    <p id="decryptionOutput"></p>
-</section>
+            <div class="tabs" role="tablist" aria-label="Cipher mode">
+                <button class="tab-button active" type="button" role="tab" aria-selected="true" data-mode="encrypt">
+                    Encrypt
+                </button>
+                <button class="tab-button" type="button" role="tab" aria-selected="false" data-mode="decrypt">
+                    Decrypt
+                </button>
+            </div>
 
-<script src="app.js"></script>
+            <form class="cipher-form" id="cipherForm" novalidate>
+                <div class="field-group">
+                    <label for="messageInput" id="messageLabel">Plaintext</label>
+                    <textarea id="messageInput" rows="5" placeholder="Enter your message..."></textarea>
+                </div>
+
+                <div class="field-group">
+                    <label for="keyInput">Cipher Key</label>
+                    <input type="text" id="keyInput" placeholder="Example: ORBIT">
+                </div>
+
+                <label class="toggle-row" for="preserveCaseInput">
+                    <span>
+                        <strong>Preserve case</strong>
+                        <small>Keep uppercase and lowercase letters as typed.</small>
+                    </span>
+                    <input type="checkbox" id="preserveCaseInput">
+                </label>
+
+                <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+                <div class="action-row">
+                    <button class="primary-button" id="submitButton" type="submit">Encrypt Message</button>
+                    <button class="ghost-button" id="clearButton" type="button">Clear</button>
+                </div>
+            </form>
+
+            <div class="result-panel" aria-live="polite">
+                <div>
+                    <p class="result-label">Result</p>
+                    <p class="result-text" id="resultOutput">Your transformed message will appear here.</p>
+                </div>
+                <button class="copy-button" id="copyButton" type="button">Copy</button>
+            </div>
+
+        </section>
+
+        <aside class="history-panel" aria-labelledby="historyTitle">
+            <div class="history-header">
+                <div>
+                    <p class="result-label" id="historyTitle">Cipher History</p>
+                    <p class="history-hint">Recent saved results from this session.</p>
+                </div>
+                <button class="text-button" id="clearHistoryButton" type="button">Clear History</button>
+            </div>
+            <div class="history-list empty" id="historyList">
+                No history yet.
+            </div>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
-
-
