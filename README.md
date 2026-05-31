@@ -1,6 +1,6 @@
 # Vigenere Cipher Web App
 
-A modern, minimal Vigenere Cipher web app for encrypting and decrypting text directly in the browser. The project uses a dark glassmorphism interface, live cipher preview, case-preserving output, and session history to make the classic cipher easier to use and understand. This project is a fun little webpage I made to learn basic HTML, CSS, and JavaScript without any framekworks.
+A modern, minimal Vigenere Cipher web app for encrypting and decrypting text directly in the browser. The project uses a dark glassmorphism interface, live cipher preview, case-preserving output, and session history to make the classic cipher easier to use and understand. This project is a fun little webpage I made to learn basic HTML, CSS, and JavaScript without any frameworks.
 
 ## Features
 
